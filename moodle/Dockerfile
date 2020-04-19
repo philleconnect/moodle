@@ -21,7 +21,7 @@ RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 RUN echo "#!/bin/sh\n" >> run.sh
 RUN echo "./entryFirst.sh" >> run.sh
 RUN echo "service php7.3-fpm start\n" >> /run.sh 
-RUN echo "sudo -u www-data nginx\n" >> /run.sh && chmod +x /run.sh
+RUN echo "nginx\n" >> /run.sh && chmod +x /run.sh
 
 EXPOSE 80
 
