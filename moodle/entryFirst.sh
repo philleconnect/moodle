@@ -9,7 +9,7 @@ chmod =700 -R /var/www/moodledata
 echo 'setting up moodle'
 sudo -u www-data /usr/bin/php /var/www/moodle/admin/cli/install.php \
     --lang=de \
-    --wwwroot='http://localhost:90' \
+    --wwwroot=$MOODLE_WEB_URL \
     --dataroot=/var/www/moodledata \
     --dbtype=mariadb \
     --dbhost=moodle_db \
