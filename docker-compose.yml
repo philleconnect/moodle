@@ -1,0 +1,39 @@
+version: '3'
+services:
+  moodle_db:
+    image: mariadb:latest
+    container_name: moodle_db
+    restart: always
+    volumes:
+      - moodle_db:/var/lib/mysql
+    networks:
+      - moodle
+    env_file:
+      - ./settings.env
+    command: [
+      '--wait_timeout=3600',
+    ]
+  
+  moodle:
+    build: moodle/
+    container_name: moodle
+    links:
+      - moodle_db
+    ports:
+      - 90:80
+    restart: always
+    volumes:
+      - moodle:/var/www/moodledata
+    env_file:
+      - ./settings.env
+    depends_on:
+      - moodle_db
+    networks:
+      - moodle
+
+volumes:
+  moodle_db:
+  moodle:
+
+networks:
+  moodle:

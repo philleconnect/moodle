@@ -1,0 +1,20 @@
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        root /var/www/moodle;
+        index index.php;
+        #client_max_body_size 0;
+        server_name moodle.philleconnect;
+        location / {
+                try_files $uri $uri/ =404;
+#                proxy_set_header Host $host;
+#                proxy_set_header X-Real-IP $remote_addr;
+#                proxy_pass http://localhost:80;
+#proxy_set_header Host $host:$server_port;
+        }
+        location ~ \.php(?:$|/) {
+                include snippets/fastcgi-php.conf;
+                fastcgi_pass unix:/run/php/php7.3-fpm.sock;
+                #fastcgi_pass 127.0.0.1:9000;
+        }
+}
