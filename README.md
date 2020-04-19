@@ -13,4 +13,8 @@ After cloning this repository be sure to execute
 
 to get the current version of moodle.
 
-To use a certain version (`v3.8.2` is our working version at the moment) go to `moodle/moodle` and execute `git checkout v3.8.2`!
+To use a certain version of moodle (`v3.8.2` is our working version at the moment) execute
+
+`git submodule foreach git checkout v3.8.2`
+
+or go to `moodle/moodle` and execute `git checkout v3.8.2`!
