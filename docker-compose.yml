@@ -15,7 +15,7 @@ services:
     ]
   
   moodle:
-    build: moodle/
+    build: .
     container_name: moodle
     links:
       - moodle_db

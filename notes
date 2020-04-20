@@ -1,0 +1,18 @@
+# Maybe useful moodle-config in config.php:
+
+//$CFG->lang = 'de';
+$CFG->dirroot   = '/var/www/moodle';
+// only if really using:
+$CFG->reverseproxy = true;
+// only if really using, then no reverseproxy:
+$CFG->sslproxy = true;
+
+$CFG->xsendfile = 'X-Accel-Redirect';
+$CFG->xsendfilealiases = array(
+    '/dataroot/' => $CFG->dataroot
+);
+
+ini_set ('display_errors', 'on');
+ini_set ('log_errors', 'on');
+ini_set ('display_startup_errors', 'on');
+ini_set ('error_reporting', E_ALL);
