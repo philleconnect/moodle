@@ -13,7 +13,7 @@ It does run, but there are still problems and it doesn-t integrate in the Phille
 
 After cloning this repository be sure to execute
 
-`git submodule update --init --recursive --remote`
+`git submodule update --init`
 
 to get the current version of moodle.
 
