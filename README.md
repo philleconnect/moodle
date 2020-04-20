@@ -1,11 +1,11 @@
 # moodle
-moodle container for the learning management system
+A container for the moodle learning management system
 
 ## Beta-State!
 
 This is still in beta-state!
 
-It does run, but there are still problems and it doesn-t integrate in the PhilleConnect LADP yet, manual LDAP-integration will be necessary. See the [Moodle-Docs](https://docs.moodle.org/38/en/LDAP_authentication#Enabling_LDAP_authentication) for details.
+It does run, but there are still problems and it doesn't integrate in the PhilleConnect LADP yet, manual LDAP-integration will be necessary. See the [Moodle-Docs](https://docs.moodle.org/38/en/LDAP_authentication#Enabling_LDAP_authentication) for details.
 
 ## How to use this
 
@@ -21,9 +21,9 @@ To use a certain version of moodle (`v3.8.2` is our working version at the momen
 
 `git submodule foreach git checkout v3.8.2`
 
-(or go to `moodle/` and execute `git checkout v3.8.2`!
+(or go to `moodle/` and execute `git checkout v3.8.2`)!
 
-### confugure
+### configure
 
 Copy the `settings.env.default` to `settings.env` (`cp settings.env.default settings.env`) and edit it according to your needs. For plain testing you don't need to change anything.
 
@@ -35,7 +35,9 @@ Copy the `settings.env.default` to `settings.env` (`cp settings.env.default sett
 
 `docker-compose down`
 
-`git submodule update` will update moodle, maybe you want to switch to a different branch here with `git submodule foreach git checkout v3.*.*`
+`git submodule update` will update moodle.
+
+\[Maybe you want to switch to a different branch here with `git submodule foreach git checkout v3.*.*`, but be aware that this is not tested by us. Refer to the moodle docs for further information.\]
 
 `git pull`
 
@@ -58,4 +60,4 @@ I solved this by
 
 - setting the exernal url in the `config.php`
 - including either `$CFG->reverseproxy = true;` xor `$CFG->sslproxy = true;` in the `config.php`
-    - Be sure not to cat it to the end of the file!! It needs to be a little above!
+    - Be sure that you __do not cat it to the end of the file!__ It needs to be a little above, as last `$CFG`-entry for example.
