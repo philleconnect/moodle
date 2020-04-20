@@ -4,7 +4,7 @@ echo 'waiting 30s to give the database-container a chance to be all up...'
 sleep 30s
 
 chown www-data:www-data -R /var/www/moodledata
-chmod =700 -R /var/www/moodledata
+chmod =755 -R /var/www/moodledata
 
 echo 'setting up moodle'
 sudo -u www-data /usr/bin/php /var/www/moodle/admin/cli/install.php \
