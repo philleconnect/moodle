@@ -20,7 +20,7 @@ services:
     links:
       - moodle_db
     ports:
-      - 90:80
+      - 90:90
     restart: always
     volumes:
       - moodle:/var/www/moodledata
