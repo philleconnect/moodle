@@ -52,11 +52,11 @@ check for changes in the `settings.env`-file
 
 Logged in as admin-user:
 
-We recommend to install the [LDAP server (sync plus)-plugin](https://moodle.org/plugins/auth_ldap_syncplus) first. This can sync the users, so that they are available 
+Maybe you want to install the [LDAP server (sync plus)-plugin](https://moodle.org/plugins/auth_ldap_syncplus) first, but it is not necessary.
 
 - go to 'Website-Administration' > 'Plugins' and select `LDAP-Server`
-- the bind-settings are not necessary, you don't need moodle to know your ldap-password!
 - type in your LDAP-url. This can just be an IP-address. The other defaults are ok.
+- the bind-settings are not necessary, you don't need moodle to know your ldap-password!
 - in 'user lookup' select the `rfc2307` for OpenLDAP
 - important: as 'memberattribute' type in `memberuid` to be able to automatically assign roles
 - the 'context' is `ou=users,dc=ldap,dc=philleconnect` for default PhilleConnect-Setup
