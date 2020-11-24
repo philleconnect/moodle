@@ -23,7 +23,8 @@ services:
       - 90:90
     restart: always
     volumes:
-      - moodle:/var/www/moodledata
+      - moodle:/var/www/moodle
+      - moodledata:/var/www/moodledata
     env_file:
       - ./settings.env
     depends_on:
@@ -34,6 +35,7 @@ services:
 volumes:
   moodle_db:
   moodle:
+  moodledata:
 
 networks:
   moodle:
