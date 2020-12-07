@@ -10,6 +10,8 @@ This is still in beta-state!
 
 It does run, but there are still problems and it doesn't integrate in the PhilleConnect LADP yet, manual LDAP-integration will be necessary. See the [Moodle-Docs](https://docs.moodle.org/38/en/LDAP_authentication#Enabling_LDAP_authentication) for details.
 
+Be sure to read this entire document on installation!
+
 ## How to use this
 
 ### clone
@@ -20,9 +22,9 @@ After cloning this repository be sure to execute
 
 to get the current version of moodle.
 
-To use a certain version of moodle (`v3.8.2` is our working version at the moment) execute
+To use a certain version of moodle (`v3.9.3` is our working version at the moment) execute
 
-`git submodule foreach git checkout v3.8.2`
+`git submodule foreach git checkout v3.9.3`
 
 (or go to `moodle/` and execute `git checkout v3.8.2`)!
 
@@ -63,6 +65,7 @@ Maybe you want to install the [LDAP server (sync plus)-plugin](https://moodle.or
 - further down select for the 'passtype' `MD5`
 - for 'removeuser' we recommend to user `delete`
 - for 'coursecreatorcontext' type in `cn=teachers,ou=groups,dc=ldap,dc=schoolconnect` for default PhilleConnect-Setup
+- in the section 'Data mapping' you can set for 'field_map_firstname' `displayName`, for 'field_map_lastname' `cn` and for 'field_map_email' `mail` and lock those values (updating them 'On every login') to prevent moodle from asking on Login. You will need the eMails to be set in PhilleConnect! moodle insists in an eMail-address being set up, even if an eMail-Server is not configured at all.
 
 
 ## Further Hints
