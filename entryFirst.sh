@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sed -i 's/^\(upload_max_filesize\s*=\s*\).*$/\1$UPLOAD_MAX_FILESIZE/' /etc/php/7.3/fpm/php.ini
+sed -i 's/^\(upload_max_filesize\s*=\s*\).*$/\1'"$UPLOAD_MAX_FILESIZE"'/' /etc/php/7.3/fpm/php.ini
 
 echo 'waiting 30s to give the database-container a chance to be all up...'
 sleep 30s
