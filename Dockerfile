@@ -21,6 +21,7 @@ RUN apt-get update && apt-get upgrade -y && \
     php7.3-soap \
     php7.3-ldap \
     ghostscript \
+    unoconv \
     sudo
 #RUN docker-php-ext-install zip
 
