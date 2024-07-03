@@ -1,3 +1,5 @@
+__Archived: Not actively maintained anymore!__
+
 # moodle
 
 This is a universal docker-container for the moodle learning management system.
